@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:10.3
+    environment:
+      - POSTGRES_DB=practical_microservices
+    ports:
+      - '0.0.0.0:5432:5432'
+  eventstore:
+    image: eventstore/eventstore
+    ports:
+      - '0.0.0.0:2113:2113'
